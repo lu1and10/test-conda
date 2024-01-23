@@ -26,12 +26,12 @@ jobs:
         with:
           auto-update-conda: true
           python-version: ${{ matrix.python-version }}
-      - name: Conda info
+      - name: install pyfftw pip
         shell: bash -el {0}
-        run: conda info
+        run: conda install pyfftw pip
       - name: Conda list
-        shell: pwsh
-        run: conda list
-      - name: Environment
         shell: bash -el {0}
-        run: printenv | sort
+        run: conda list
+      - name: pip list
+        shell: bash -el {0}
+        run: pip list
