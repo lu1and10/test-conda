@@ -34,7 +34,7 @@ jobs:
           conda list
       - name: pip install finufft
         shell: bash -el {0}
-        run: pip install "finufft==2.2.0"
+        run: pip install "finufft==2.2.0" pytest
       - name: pip list
         shell: bash -el {0}
         run: pip list
