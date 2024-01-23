@@ -26,12 +26,15 @@ jobs:
         with:
           auto-update-conda: true
           python-version: ${{ matrix.python-version }}
-      - name: install pyfftw pip
+      - name: conda install pyfftw
         shell: bash -el {0}
-        run: conda install pyfftw pip
-      - name: Conda list
+        run: |
+          conda config --add channels conda-forge
+          conda install pyfftw
+          conda list
+      - name: pip install finufft
         shell: bash -el {0}
-        run: conda list
+        run: pip install "finufft==2.2.0"
       - name: pip list
         shell: bash -el {0}
         run: pip list
