@@ -38,3 +38,6 @@ jobs:
       - name: pip list
         shell: bash -el {0}
         run: pip list
+      - name: python run
+        shell: bash -el {0}
+        run: python test_finufft_plan.py
